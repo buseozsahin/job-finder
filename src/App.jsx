@@ -13,9 +13,9 @@ function App() {
     <div className="flex flex-col w-full items-center">
       <Navbar onScreenChange={(value) => setScreen(value)}/>
 
-      <div className="bg-[#ffffff] w-[1200px] h-[900px]">
+      <div className="w-[1200px] h-full">
         {screen === "home" && <HomePage/>}
-        {screen === "login" && <LoginPage/>}
+        {screen === "login" && <LoginPage onScreenChange={setScreen}/>}
         {screen === "getStarted" && <GetStartedPage/>}
         {screen === "browseJobs" && <BrowseJobs/>}
         {screen === "howItWorks" && <HowItWorks/>}

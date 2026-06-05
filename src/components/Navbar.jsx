@@ -1,6 +1,6 @@
 import LogoWithName from "./LogoWithName";
 import NavItem from "./NavItem";
-import NavButton from "./NavButton";
+import Button from "./Button";
 import { useState } from "react";
 
 
@@ -18,7 +18,9 @@ function Navbar({onScreenChange}) {
       <div className="w-[1200px] bg-[#faf8f4]/40 backdrop-blur-md flex h-full items-center">
 
         <div className="flex-1 flex h-full items-center gap-12 ml-4">
-          <LogoWithName/>
+          <LogoWithName
+            onClick={() => onScreenChange("home")}
+            />
           <div className="flex items-center gap-6">
             <NavItem 
               label="Browse jobs" 
@@ -37,12 +39,13 @@ function Navbar({onScreenChange}) {
 
 
         <div className="flex-1 justify-end flex items-center gap-3 ">
-          <NavButton 
+          <Button 
             label="Log In" 
             onClick={() => onScreenChange("login")}/>
-          <NavButton 
+          <Button 
             label="Get Started" 
-            onClick={() => onScreenChange("getStarted")} variant="filled"/>
+            onClick={() => onScreenChange("getStarted")} 
+            variant="filled"/>
         </div>
       </div>
 

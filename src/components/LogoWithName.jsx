@@ -1,8 +1,8 @@
 import logo from "../assets/logo.png";
 
-function LogoWithName () {
+function LogoWithName ({onClick}) {
   return(
-    <div className="flex items-center">
+    <div onClick={onClick} className="flex items-center cursor-pointer">
 
       <img className="w-[24px] h-[24px] rounded-full"
       src={logo}
