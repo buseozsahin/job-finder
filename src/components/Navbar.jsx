@@ -1,8 +1,17 @@
 import LogoWithName from "./LogoWithName";
 import NavItem from "./NavItem";
 import NavButton from "./NavButton";
+import { useState } from "react";
 
-function Navbar({onLoginClick, onGetStartedClick}) {
+
+function Navbar({onScreenChange}) {
+  const [active, setActive] = useState(null);
+
+  const handleNav = (screen) => {
+    setActive(screen);
+    onScreenChange(screen);
+  };
+
   return (
   
     <header className="sticky top-0 z-50 flex w-full justify-center h-[58.5px] border-b border-b-[#ece4d6]">
@@ -11,16 +20,29 @@ function Navbar({onLoginClick, onGetStartedClick}) {
         <div className="flex-1 flex h-full items-center gap-12 ml-4">
           <LogoWithName/>
           <div className="flex items-center gap-6">
-            <NavItem label="Browse jobs"/>
-            <NavItem label="How it works"/>
-            <NavItem label="Pricing"/>
+            <NavItem 
+              label="Browse jobs" 
+              isActive={active === "browseJobs"}
+              onClick={() => handleNav("browseJobs")}/>
+            <NavItem 
+              label="How it works" 
+              isActive={active === "howItWorks"}
+              onClick={() => handleNav("howItWorks")}/>
+            <NavItem 
+              label="Pricing" 
+              isActive={active === "pricing"}
+              onClick={() => handleNav("pricing")}/>
           </div>
         </div>
 
 
         <div className="flex-1 justify-end flex items-center gap-3 ">
-          <NavButton label="Log In" onClick={onLoginClick}/>
-          <NavButton label="Get Started" onClick={onGetStartedClick} variant="filled"/>
+          <NavButton 
+            label="Log In" 
+            onClick={() => onScreenChange("login")}/>
+          <NavButton 
+            label="Get Started" 
+            onClick={() => onScreenChange("getStarted")} variant="filled"/>
         </div>
       </div>
 

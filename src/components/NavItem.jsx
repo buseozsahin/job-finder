@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom"; 
 
-function NavItem({label, to}) {
+function NavItem({label, onClick, isActive}) {
   return(
-    <Link 
-      className={'text-sm font-normal text-gray-500 cursor-pointer hover:text-gray-900'}
-      to="/"
+    <span 
+      onClick={onClick}
+      className={`text-sm cursor-pointer ${isActive ? "font-semibold text-gray-900" : "font-normal text-gray-500"}`}
       >
       {label}
-    </Link>
+    </span>
   );
 }
 
