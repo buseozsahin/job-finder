@@ -11,7 +11,6 @@ function LogoWithName ({onClick}) {
       <h1 className="p-[5px] font-bold font-size-[19.68-px]">Job Finder</h1>
 
     </div>
-
   )
 }
 

@@ -4,7 +4,7 @@ import Button from "./Button";
 import { useState } from "react";
 
 
-function Navbar({onScreenChange}) {
+function Navbar({onScreenChange, isLoggedIn}) {
   const [active, setActive] = useState(null);
 
   const handleNav = (screen) => {
@@ -22,18 +22,48 @@ function Navbar({onScreenChange}) {
             onClick={() => onScreenChange("home")}
             />
           <div className="flex items-center gap-6">
-            <NavItem 
-              label="Browse jobs" 
-              isActive={active === "browseJobs"}
-              onClick={() => handleNav("browseJobs")}/>
-            <NavItem 
-              label="How it works" 
-              isActive={active === "howItWorks"}
-              onClick={() => handleNav("howItWorks")}/>
-            <NavItem 
-              label="Pricing" 
-              isActive={active === "pricing"}
-              onClick={() => handleNav("pricing")}/>
+
+            {isLoggedIn ? (
+               <>
+                <NavItem 
+                  label="Today" 
+                  isActive={active === "today"}
+                  onClick={() => handleNav("browseJobs")}/>
+                <NavItem 
+                  label="Browse" 
+                  isActive={active === "browse"}
+                  onClick={() => handleNav("howItWorks")}/>
+                <NavItem 
+                  label="Saved" 
+                  isActive={active === "saved"}
+                  onClick={() => handleNav("pricing")}/>
+                <NavItem 
+                  label="History" 
+                  isActive={active === "history"}
+                  onClick={() => handleNav("pricing")}/>
+                <NavItem 
+                  label="Preferences" 
+                  isActive={active === "preferences"}
+                  onClick={() => handleNav("pricing")}/>
+              </>
+
+            ): (
+              <>
+                <NavItem 
+                label="Browse jobs" 
+                isActive={active === "browseJobs"}
+                onClick={() => handleNav("browseJobs")}/>
+              <NavItem 
+                label="How it works" 
+                isActive={active === "howItWorks"}
+                onClick={() => handleNav("howItWorks")}/>
+              <NavItem 
+                label="Pricing" 
+                isActive={active === "pricing"}
+                onClick={() => handleNav("pricing")}/>
+              </>
+            )}
+
           </div>
         </div>
 
