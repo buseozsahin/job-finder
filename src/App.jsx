@@ -6,6 +6,11 @@ import GetStartedPage from "./pages/GetStartedPage";
 import BrowseJobs from "./pages/BrowseJobs";
 import HowItWorks from "./pages/HowItWorks";
 import Pricing from "./pages/Pricing";
+import Today from "./pages/Today";
+import Browse from "./pages/Browse";
+import Saved from "./pages/Saved";
+import History from "./pages/History";
+import Prefereces from "./pages/Preferences";
 
 function App() {
   const[screen, setScreen] = useState("home");
@@ -21,10 +26,11 @@ function App() {
         {screen === "browseJobs" && <BrowseJobs/>}
         {screen === "howItWorks" && <HowItWorks/>}
         {screen === "pricing" && <Pricing/>}
-        {screen === "today" && <Pricing/>}
-        {screen === "browse" && <Pricing/>}
-        {screen === "saved" && <Pricing/>}
-        {screen === "preferences" && <Pricing/>}
+        {screen === "today" && <Today/>}
+        {screen === "browse" && <Browse/>}
+        {screen === "saved" && <Saved/>}
+        {screen === "history" && <History/>}
+        {screen === "preferences" && <Prefereces/>}
       </div>
     </div>
 

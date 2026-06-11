@@ -28,23 +28,23 @@ function Navbar({onScreenChange, isLoggedIn}) {
                 <NavItem 
                   label="Today" 
                   isActive={active === "today"}
-                  onClick={() => handleNav("browseJobs")}/>
+                  onClick={() => handleNav("today")}/>
                 <NavItem 
                   label="Browse" 
                   isActive={active === "browse"}
-                  onClick={() => handleNav("howItWorks")}/>
+                  onClick={() => handleNav("browse")}/>
                 <NavItem 
                   label="Saved" 
                   isActive={active === "saved"}
-                  onClick={() => handleNav("pricing")}/>
+                  onClick={() => handleNav("saved")}/>
                 <NavItem 
                   label="History" 
                   isActive={active === "history"}
-                  onClick={() => handleNav("pricing")}/>
+                  onClick={() => handleNav("history")}/>
                 <NavItem 
                   label="Preferences" 
                   isActive={active === "preferences"}
-                  onClick={() => handleNav("pricing")}/>
+                  onClick={() => handleNav("preferences")}/>
               </>
 
             ): (
@@ -71,10 +71,10 @@ function Navbar({onScreenChange, isLoggedIn}) {
         <div className="flex-1 justify-end flex items-center gap-3 ">
           <Button 
             label="Log In" 
-            onClick={() => onScreenChange("login")}/>
+            onClick={() => handleNav("login")}/>
           <Button 
             label="Get Started" 
-            onClick={() => onScreenChange("getStarted")} 
+            onClick={() => handleNav("getStarted")} 
             variant="filled"/>
         </div>
       </div>

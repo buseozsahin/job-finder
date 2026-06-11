@@ -4,11 +4,11 @@ function LogoWithName ({onClick}) {
   return(
     <div onClick={onClick} className="flex items-center cursor-pointer">
 
-      <img className="w-[24px] h-[24px] rounded-full"
+      <img className="w-[34px] h-[34px] rounded-full"
       src={logo}
       alt="logo" />
 
-      <h1 className="p-[5px] font-bold font-size-[19.68-px]">Job Finder</h1>
+      <h1 className="p-[5px] font-bold text-xl text-[#1a2e2a]">Job Finder</h1>
 
     </div>
   )
