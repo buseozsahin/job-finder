@@ -5,7 +5,6 @@ function NavButton({
   textColor="#ffffff", 
   className="",
   onClick,
-  isActive,
   
 }) {
   return (
