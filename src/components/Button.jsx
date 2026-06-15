@@ -1,4 +1,4 @@
-function NavButton({
+function Button({
   label, 
   variant = "outlined", 
   color = "#1a2e2a", 
@@ -26,4 +26,4 @@ function NavButton({
   );
 }
 
-export default NavButton;
+export default Button;

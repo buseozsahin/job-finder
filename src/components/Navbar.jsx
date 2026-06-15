@@ -32,7 +32,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
         </div>
         <div className="flex-1 justify-end flex items-center gap-3">
           {isLoggedIn ? (
-            <Button label="Log Out" onClick={() => {
+            <Button label="Sign out" onClick={() => {
               setIsLoggedIn(false);
               navigate("/");
             }}/>

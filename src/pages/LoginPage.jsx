@@ -44,6 +44,7 @@ function LoginPage({ setIsLoggedIn }) {
           Log in to see today's three.
         </p>
       </div>
+
       <div className="w-full max-w-sm flex flex-col gap-3">
         <Button
           className="w-full py-[14px] border border-[#d6d0c0] rounded-xl"
@@ -59,11 +60,13 @@ function LoginPage({ setIsLoggedIn }) {
           color="#faf8f4"
           textColor="#1a2e2a"
         />
+        
         <div className="flex items-center my-2">
           <div className="flex-1 h-px bg-gray-300"></div>
           <span className="px-3 text-gray-400 text-sm">OR</span>
           <div className="flex-1 h-px bg-gray-300"></div>
         </div>
+
         <div className="flex flex-col gap-1">
           <label className="text-sm text-gray-900 text-left">Email</label>
           <input
