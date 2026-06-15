@@ -60,7 +60,7 @@ function LoginPage({ setIsLoggedIn }) {
           color="#faf8f4"
           textColor="#1a2e2a"
         />
-        
+
         <div className="flex items-center my-2">
           <div className="flex-1 h-px bg-gray-300"></div>
           <span className="px-3 text-gray-400 text-sm">OR</span>
@@ -91,6 +91,7 @@ function LoginPage({ setIsLoggedIn }) {
             <p className="text-red-500 text-xs mt-1">{errors.password}</p>
           )}
         </div>
+        
         <Button
           className="w-full py-[14px] px-4 rounded-lg mt-1"
           variant="filled"

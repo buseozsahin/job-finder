@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import Button from "../components/Button";
 
-function GetStartedPage(){
+function GetStartedPage({setIsLoggedIn, setIsNewUser}){
   const navigate = useNavigate();
   const[email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +40,9 @@ function GetStartedPage(){
       return;
     }
     setErrors({});
-    navigate("/today");
+    setIsNewUser(true);
+    setIsLoggedIn(true);
+    navigate("/setupProfile");
   }
 
   return(

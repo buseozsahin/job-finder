@@ -12,9 +12,13 @@ import Browse from "./pages/Browse";
 import Saved from "./pages/Saved";
 import History from "./pages/History";
 import Preferences from "./pages/Preferences";
+import SetupProfile from "./pages/SetupProfile"
+
 
 function App() {
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isNewUser, setIsNewUser] = useState(false);
   return (
     <div className="flex flex-col w-full items-center">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
@@ -22,7 +26,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn}/>}/>
-          <Route path="/getStarted" element={<GetStartedPage/>}/>
           <Route path="/browseJobs" element={<BrowseJobs/>}/>
           <Route path="/howItWorks" element={<HowItWorks/>}/>
           <Route path="/pricing" element={<Pricing/>}/>
@@ -31,6 +34,8 @@ function App() {
           <Route path="/saved" element={<Saved/>}/>
           <Route path="/history" element={<History/>}/>
           <Route path="/preferences" element={<Preferences/>}/>
+          <Route path="/getStarted" element={<GetStartedPage setIsLoggedIn={setIsLoggedIn} setIsNewUser={setIsNewUser}/>}/>
+          <Route path="/setupProfile" element={<SetupProfile setIsNewUser={setIsNewUser}/>}/>
         </Routes>
       </div>
     </div>
