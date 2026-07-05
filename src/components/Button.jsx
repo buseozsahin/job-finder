@@ -2,14 +2,16 @@ function Button({
   label, 
   variant = "outlined", 
   color = "#1a2e2a", 
-  textColor="#ffffff", 
-  className="",
+  textColor= "#ffffff", 
+  className= "",
   onClick,
+  disabled= false
   
 }) {
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       className={`px-[12px] py-[6px] text-sm rounded-lg cursor-pointer transition-colors duration-200 ${
         variant === "filled"
           ? ""

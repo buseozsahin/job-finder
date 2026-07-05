@@ -29,7 +29,6 @@ function GetStartedPage({setIsLoggedIn, setIsNewUser}){
       newErrors.confirmPassword = "Passwords do not macth. Try again!";
     }
 
-
     return newErrors;
   }
 

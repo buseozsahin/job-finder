@@ -23,7 +23,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
               </>
             ) : (
               <>
-                <NavItem label="Browse Jobs" isActive={location.pathname === "/browseJobs"} onClick={() => navigate("/browseJobs")}/>
+                <NavItem label="Browse jobs" isActive={location.pathname === "/browseJobs"} onClick={() => navigate("/browseJobs")}/>
                 <NavItem label="How it works" isActive={location.pathname === "/howItWorks"} onClick={() => navigate("/howItWorks")}/>
                 <NavItem label="Pricing" isActive={location.pathname === "/pricing"} onClick={() => navigate("/pricing")}/>
               </>
@@ -38,7 +38,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
             }}/>
           ) : (
             <>
-              <Button label="Log In" onClick={() => navigate("/login")}/>
+              <Button label="Log in" onClick={() => navigate("/login")}/>
               <Button label="Get Started" onClick={() => navigate("/getStarted")} variant="filled"/>
             </>
           )}
