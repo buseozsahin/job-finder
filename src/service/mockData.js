@@ -10,7 +10,7 @@ export const roles = [
 ]
 
 export const skillsMap = {
-  "frontend-engineer" : ["React", "TypeScript", "CSS", "Next.js", "Python", "Node.js", "Tailwind", "Bootstrap", "Swift", "Kubernetes", "Postgres" ],
+  "frontend-engineer" : ["React", "TypeScript", "CSS", "Next.js", "Python", "Node.js", "Tailwind", "Bootstrap", "Swift", "Kubernetes", "Postgres"],
   "backend-engineer" : ["AWS", "Java", "Python", "SQL", "Docker", "Git", "Ruby", "JavaScript", "Go", "MongoDB", "Kafka", "Rest APIs", "Azure", "GraphQL"],
   "fullstack-engineer" : ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Redux", "API", "Axios", "PostgreSQL", "MySQL"],
   "ios-engineer" : ["Swift", "SwiftUI", "Xcode", "Core Data", "UIKit"],
