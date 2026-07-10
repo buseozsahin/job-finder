@@ -1,5 +1,7 @@
-import { useNavigate } from "react-router-dom"; 
-import RoleComboBox from "../components/RoleComboBox";
+import { useNavigate } from "react-router-dom";
+import ComboBox from "../components/ComboBox"; 
+import { fetchItems } from "../service/apiService";
+import { fetchStates } from "../service/apiService";
 import { useState } from "react";
 import ProgressBar from "../components/ProgressBar";
 import Button from "../components/Button";
@@ -7,6 +9,10 @@ import SkillDisplay from "../components/SkillDisplay";
 import SenioritySelector from "../components/SenioritySelector";
 import WorkStyleSelector from "../components/WorkStyleSelector";
 import SliderBar from "../components/SliderBar"
+import MultiSelectComboBox from "../components/MultiSelectComboBox";
+import { usStates } from "../service/mockData";
+import Chip from "../components/Chip";
+import JobWebSiteDisplay from"../components/JobWebSiteDisplay";
 
 function SetupProfile({ setIsNewUser }) {
   const navigate = useNavigate();
@@ -17,6 +23,8 @@ function SetupProfile({ setIsNewUser }) {
   const [selectedSeniority, setSelectedSeniority] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [salary, setSalary] = useState(0);
+  const [selectedState, setSelectedState] = useState([]);
+  const [selectedWebSite, setSelectedWebSite] = useState([]);
 
   function handleFinish() {
     setIsNewUser(false);
@@ -58,7 +66,11 @@ function SetupProfile({ setIsNewUser }) {
               Most recent role:
             </label>
 
-            <RoleComboBox onRoleSelect={(role) => setSelectedRole(role)}/>
+            <ComboBox
+              fetchItems={fetchItems}
+              onItemSelect={(role) => setSelectedRole(role)}
+              placeholder="Search for a role.."
+            />
 
               {selectedRole && (
                 <p className="text-left text-sm text-[#2d5a50] mt-2 ">
@@ -96,7 +108,6 @@ function SetupProfile({ setIsNewUser }) {
               selectedSeniority={selectedSeniority}
               setSelectedSeniority={setSelectedSeniority}
             />         
-
           </>
         )}
 
@@ -110,7 +121,12 @@ function SetupProfile({ setIsNewUser }) {
               Locations you'd consider: 
             </label>
             
-            <RoleComboBox onRoleSelect={(role) => setSelectedRole(role)}/>
+            <MultiSelectComboBox
+              fetchItems={fetchStates}
+              selectedItems={selectedState}
+              onSelectionChange={(state => setSelectedState(state))}
+              placeholder="Search for a state..."
+            ></MultiSelectComboBox>
 
             <label className="text-sm text-left text-[#2d5a50] block mt-5">
               Remote Preference:
@@ -128,7 +144,7 @@ function SetupProfile({ setIsNewUser }) {
             <SliderBar
               min={20000}
               max={300000}
-              step={5000}
+              step={1000}
               value={salary}
               setValue={setSalary}
             ></SliderBar>
@@ -139,7 +155,16 @@ function SetupProfile({ setIsNewUser }) {
           <>
             <h1 className="text-[48px] text-[#1a2e2a] text-left font-bold leading-tight mb-4">
               Sources to watch
-            </h1>  
+            </h1>
+
+            <label className="text-sm text-left text-[#2d5a50] block mt-5">
+              Job boards to watch:
+            </label>
+
+            <JobWebSiteDisplay
+              selectedCompanies={selectedWebSite}
+              setSelectedCompanies={setSelectedWebSite}
+            />
           </>
         )}
 
@@ -149,15 +174,26 @@ function SetupProfile({ setIsNewUser }) {
             label="Back" 
             onClick={handleBack}
           />
-          <Button 
-            label="Continue" 
-            variant="filled" 
-            disabled={!name || !selectedRole}
-            onClick={handleContinue}
-            color={!name || !selectedRole ? "#b4c7be" : "#1a2e2a"}
-          />
-        </div>
+          {currentStep <= 3 && (
+            <Button 
+              label="Continue" 
+              variant="filled" 
+              disabled={!name || !selectedRole}
+              onClick={handleContinue}
+              color={!name || !selectedRole ? "#b4c7be" : "#1a2e2a"}
+            />
+          )}
 
+          {currentStep === 4 && (
+            <Button 
+              label="Finish setup" 
+              variant="filled" 
+              disabled={!name || !selectedRole}
+              onClick={handleFinish}
+              color={!name || !selectedRole ? "#b4c7be" : "#34685c"}
+            />
+          )}
+        </div>
       </div>
     </div>
 

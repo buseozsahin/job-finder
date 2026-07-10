@@ -1,4 +1,5 @@
 export default function Chip({
+  key,
   label,
   selectable,
   selected,

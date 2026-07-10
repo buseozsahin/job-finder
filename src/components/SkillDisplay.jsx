@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchSkilsForRoles } from "../service/apiService"
 import Chip from "./Chip";
+import ChipDisplay from "./ChipDisplay";
 
 function SkillDisplay({ roleId, selectedUserSkills, setSelectedUserSkills }) {
   const [skills, setSkills] = useState([])
@@ -28,15 +29,11 @@ function SkillDisplay({ roleId, selectedUserSkills, setSelectedUserSkills }) {
 
   return(
     <div>
-      {skills.map((skill) => (
-        <Chip
-          key={skill}
-          label={skill}
-          selectable={true}
-          selected={selectedUserSkills.includes(skill)}
-          onToggle={() => toggleSkill(skill)}
-        ></Chip>
-      ))}
+      <ChipDisplay
+        items={skills}
+        selectedItems={selectedUserSkills}
+        onToggleItem={toggleSkill}
+      />
     </div>
   )
 }
