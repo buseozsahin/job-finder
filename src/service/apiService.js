@@ -1,4 +1,4 @@
-import { roles, skillsMap, usStates } from "./mockData.js"
+import { roles, skillsMap, usStates, jobs } from "./mockData.js"
 
 export async function fetchItems(query) {
   const filtered = roles.filter(item => 
@@ -16,4 +16,8 @@ export async function fetchStates(query) {
     item.label.toLowerCase().includes(query.toLowerCase())
   )
   return filtered
+}
+
+export async function fecthJobs() {
+  return jobs
 }
