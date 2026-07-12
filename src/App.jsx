@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="flex flex-col w-full items-center">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-      <div className="w-[1200px] h-[900px] bg-white">
+      <div className="w-[1200px] h-[900px] bg-[#faf8f4]">
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn}/>}/>

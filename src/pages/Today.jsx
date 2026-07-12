@@ -1,42 +1,19 @@
 import JobCard from "../components/JobCard";
+import JobCardsDisplay from "../components/JobCardsDisplay";
 
 function Today(){
   return(
-    <div className="flex-start">
-      <JobCard
-        title="Staff Software Engineer, Platform"
-        companyName="Linear"
-        location="America"
-        remote="Remote"
-        salaryMin={210000}
-        salaryMax={280000}
-        skills={["TypeScript", "Postgres", "Distrinuted Systems", "Node.js"]}
-        companyLogo={null}
-      />
+    <div className="pl-20">
+      <div>
+        <h1 className="text-[52px] text-[#1a2e2a] font-semibold"> 
+          Good Morning,  
+          <span className="text-[52px] text-[#2D5A4F] font-semibold"> Alex</span>.
+          </h1>
 
-          <JobCard
-        title="title"
-        companyName="companyName"
-        location="location"
-        remote="remote"
-        salaryMin={100000}
-        salaryMax={150000}
-        skills={["skill1", "skill2", "skill3"]}
-        companyLogo={null}
-      />
-
-          <JobCard
-        title="title"
-        companyName="companyName"
-        location="location"
-        remote="remote"
-        salaryMin={100000}
-        salaryMax={150000}
-        skills={["skill1", "skill2", "skill3"]}
-        companyLogo={null}
-      />
+          <p className="text-sm text-gray-500 mb-4">Three new roles that fit, ranked by how well we think they match your profile.</p>
+      </div>
+      <JobCardsDisplay></JobCardsDisplay>
     </div>
-    
   );
 }
 export default Today;

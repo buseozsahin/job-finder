@@ -11,10 +11,11 @@ export default function JobCard ({
   salaryMin,
   salaryMax,
   companyLogo,
+  postedDate,
 }) {
 
   return (
-    <div className="w-[700px] h-[300px] mx-auto rounded-xl border border-[#d6d0c0] bg-[#fdfcf9] pl-20 py-4 mb-4">
+    <div className="w-[690px] h-[290px] rounded-xl border border-[#d6d0c0] bg-[#fdfcf9] pl-20 py-4 mb-4">
       <div className="flex items-start gap-3">
           <div className="w-[52px] h-[52px] ml-4">
           {companyLogo ? (
@@ -41,16 +42,30 @@ export default function JobCard ({
               selectable={false}
             />
         )}
+
+        <hr className="border-t border-dashed border-gray-300 my-2 w-[450px]" />
       </div>
 
-      <div className="flex pl-20 mt-4 gap-4">
+      <div className="text-xs text-gray-500 mt-2 ml-22 space-y-2 mb-6">
+        <span className="block">WHY IT FITS YOU</span>
+        <p>Coming Soon!</p>
+        <p>Coming Soon!</p>
+        <p>Coming Soon!</p>    
+      </div>
+
+      <div className="flex items-center pl-20 mt-4 gap-4 mt-auto">
         <Button
           label="View role"
           variant="filled"
-        ></Button>
+        />
+
         <Button
           label="Save"
-        ></Button>
+        />
+
+        <Button
+          label="Skip"
+        />
       </div>
     </div>
   )

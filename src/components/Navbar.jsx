@@ -8,7 +8,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 flex w-full justify-center h-[58.5px] border-b border-b-[#ece4d6]">
+    <header className="sticky top-0 z-50 flex w-full justify-center h-[58.5px] border-b border-b-[#d6d0c0]">
       <div className="w-[1200px] bg-[#faf8f4]/40 backdrop-blur-md flex h-full items-center">
         <div className="flex-1 flex h-full items-center gap-12 ml-4">
           <LogoWithName onClick={() => navigate("/")}/>
