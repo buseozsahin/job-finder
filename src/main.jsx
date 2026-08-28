@@ -6,7 +6,7 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter base="/job-finder">
+    <BrowserRouter basename="/job-finder">
         <App />
     </BrowserRouter>
   </StrictMode>,

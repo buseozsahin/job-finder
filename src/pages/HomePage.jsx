@@ -1,26 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import companyLogo from "../assets/companyLogo.png";
 
 const monoFont = "'JetBrains Mono', 'SF Mono', Menlo, monospace";
 
 const matches = [
-  { rank: 1, initials: "ST", title: "Senior Frontend Engineer", meta: "Stripe · San Francisco, CA", score: 96 },
-  { rank: 2, initials: "LN", title: "Staff Software Engineer, Platform", meta: "Linear · Remote (Americas)", score: 93 },
-  { rank: 3, initials: "FG", title: "Product Engineer", meta: "Figma · New York, NY", score: 89 },
+  { rank: 1, title: "Senior Frontend Engineer", meta: "Stripe · San Francisco, CA" },
+  { rank: 2, title: "Staff Software Engineer, Platform", meta: "Linear · Remote (Americas)" },
+  { rank: 3, title: "Product Engineer", meta: "Figma · New York, NY" },
 ];
-
-function MatchScore({ score }) {
-  return (
-    <div
-      className="relative w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-      style={{ background: `conic-gradient(#2D5A4F ${score}%, #e5e1d4 0)` }}
-    >
-      <div className="absolute inset-[3px] rounded-full bg-[#faf8f4] flex items-center justify-center">
-        <span className="text-[11px] font-semibold text-[#2D5A4F]">{score}</span>
-      </div>
-    </div>
-  );
-}
 
 function HomePage(){
   const navigate = useNavigate();
@@ -100,16 +88,17 @@ function HomePage(){
                   <span className="text-xs text-gray-400 w-5">
                     #{match.rank}
                   </span>
-                  <div className="w-8 h-8 rounded-lg bg-[#f5f0e8] border border-[#d6d0c0] flex items-center justify-center text-[11px] font-semibold text-[#4a5a55]">
-                    {match.initials}
-                  </div>
+                  <img
+                    src={companyLogo}
+                    alt={match.title}
+                    className="w-8 h-8 rounded-lg object-cover border border-[#d6d0c0]"
+                  />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-[#1a2e2a]">
                       {match.title}
                     </p>
                     <p className="text-xs text-gray-500">{match.meta}</p>
                   </div>
-                  <MatchScore score={match.score} />
                 </div>
                 {i !== matches.length - 1 && (
                   <hr className="border-t border-[#e5e1d4]" />
