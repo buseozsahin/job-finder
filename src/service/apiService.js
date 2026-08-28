@@ -18,6 +18,6 @@ export async function fetchStates(query) {
   return filtered
 }
 
-export async function fecthJobs() {
+export async function fetchJobs() {
   return jobs
 }

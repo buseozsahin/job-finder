@@ -35,8 +35,8 @@ function LoginPage({ setIsLoggedIn }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <div className="w-full max-w-sm text-center mb-8">
+    <div className="min-h-screen flex flex-col items-center">
+      <div className="w-full max-w-sm text-center mb-4">
         <h1 className="text-[48px] text-[#1a2e2a] font-bold leading-tight">
           Welcome Back
         </h1>

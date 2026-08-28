@@ -2,7 +2,6 @@ import Chip from "./Chip"
 
 const locationOptions = [
   "Fully remote",
-  "Junior",
   "Hybrid",
   "On-site",
 ]

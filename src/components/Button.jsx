@@ -1,7 +1,8 @@
 function Button({
   label, 
+  icon,
   variant = "outlined", 
-  color = "#1a2e2a", 
+  color = "#2D5A50", 
   textColor= "#ffffff", 
   className= "",
   onClick,
@@ -12,7 +13,7 @@ function Button({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`px-[12px] py-[6px] text-sm rounded-lg cursor-pointer transition-colors duration-200 ${
+      className={`flex items-center gap-2 px-[12px] py-[6px] text-xs rounded-lg cursor-pointer transition-colors duration-200 ${
         variant === "filled"
           ? ""
           : "font-normal text-gray-500 hover:text-gray-900"
@@ -23,6 +24,7 @@ function Button({
           : {}
       }
     >
+      {icon}
       {label}
     </button>
   );

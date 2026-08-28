@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fecthJobs } from "../service/apiService";
+import { fetchJobs } from "../service/apiService";
 import JobCard from "./JobCard";
 
 function JobCardsDisplay() {
@@ -7,7 +7,7 @@ function JobCardsDisplay() {
 
   useEffect(() => {
     const loadJobs = async () => {
-      const data = await fecthJobs()
+      const data = await fetchJobs()
       setJobs(data)
     } 
     loadJobs()
@@ -18,6 +18,7 @@ function JobCardsDisplay() {
       {jobs.map((job) => (
       <JobCard
         key={job.id}
+        id={job.id}
         title={job.title}
         companyName={job.company}
         location={job.location}

@@ -93,6 +93,12 @@ export const jobs = [
     salaryMax: 130000,
     postedDate: "2026-07-01",
     skills: ["React", "TypeScript", "CSS"],
+    overview: "Build developer-facing UI for Stripe's payments dashboard. You'll own the React component library used by 4,000+ internal engineers and 3M+ merchants.",
+    requirements: 
+    ["6+ years building production frontend", 
+    "Deep React + TypeScript experience", 
+    "Comfortable owning design system primitives", 
+    "Experience with Figma → code workflows"]
   },
   {
     id: "job-2",
@@ -104,6 +110,12 @@ export const jobs = [
     salaryMax: 150000,
     postedDate: "2026-07-03",
     skills: ["Java", "AWS", "SQL"],
+    overview: "Build developer-facing UI for Stripe's payments dashboard. You'll own the React component library used by 4,000+ internal engineers and 3M+ merchants.",
+    requirements: 
+    ["6+ years building production frontend", 
+    "Deep React + TypeScript experience", 
+    "Comfortable owning design system primitives", 
+    "Experience with Figma → code workflows"]
   },
   {
     id: "job-3",
@@ -115,6 +127,12 @@ export const jobs = [
     salaryMax: 140000,
     postedDate: "2026-07-05",
     skills: ["JavaScript", "React", "PostgreSQL"],
+    overview: "Build developer-facing UI for Stripe's payments dashboard. You'll own the React component library used by 4,000+ internal engineers and 3M+ merchants.",
+    requirements: 
+    ["6+ years building production frontend", 
+    "Deep React + TypeScript experience", 
+    "Comfortable owning design system primitives", 
+    "Experience with Figma → code workflows"]
   },
   {
     id: "job-4",
@@ -126,5 +144,11 @@ export const jobs = [
     salaryMax: 145000,
     postedDate: "2026-07-07",
     skills: ["Docker", "Kubernetes", "Terraform"],
+    overview: "Build developer-facing UI for Stripe's payments dashboard. You'll own the React component library used by 4,000+ internal engineers and 3M+ merchants.",
+    requirements: 
+    ["6+ years building production frontend", 
+    "Deep React + TypeScript experience", 
+    "Comfortable owning design system primitives", 
+    "Experience with Figma → code workflows"]
   },
 ];

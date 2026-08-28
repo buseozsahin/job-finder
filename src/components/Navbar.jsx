@@ -8,7 +8,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 flex w-full justify-center h-[58.5px] border-b border-b-[#d6d0c0]">
+    <header className="sticky top-0 z-50 flex w-full justify-center h-[58.5px] border-b border-b-[#D6D0C0]">
       <div className="w-[1200px] bg-[#faf8f4]/40 backdrop-blur-md flex h-full items-center">
         <div className="flex-1 flex h-full items-center gap-12 ml-4">
           <LogoWithName onClick={() => navigate("/")}/>
@@ -18,12 +18,11 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                 <NavItem label="Today" isActive={location.pathname === "/today"} onClick={() => navigate("/today")}/>
                 <NavItem label="Browse" isActive={location.pathname === "/browse"} onClick={() => navigate("/browse")}/>
                 <NavItem label="Saved" isActive={location.pathname === "/saved"} onClick={() => navigate("/saved")}/>
-                <NavItem label="History" isActive={location.pathname === "/history"} onClick={() => navigate("/history")}/>
                 <NavItem label="Preferences" isActive={location.pathname === "/preferences"} onClick={() => navigate("/preferences")}/>
               </>
             ) : (
               <>
-                <NavItem label="Browse jobs" isActive={location.pathname === "/browseJobs"} onClick={() => navigate("/browseJobs")}/>
+                <NavItem label="Browse jobs" isActive={location.pathname === "/browse"} onClick={() => navigate("/browse")}/>
                 <NavItem label="How it works" isActive={location.pathname === "/howItWorks"} onClick={() => navigate("/howItWorks")}/>
                 <NavItem label="Pricing" isActive={location.pathname === "/pricing"} onClick={() => navigate("/pricing")}/>
               </>
